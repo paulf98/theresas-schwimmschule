@@ -16,16 +16,15 @@
                 </svg>
             </div>
         </div>
-        <footer class="w-full min-h-[200px] bg-sky-500 text-white py-8">
-            <div class="container mx-auto flex justify-between gap-8">
-
+        <footer class="w-full min-h-[200px] bg-sky-500 text-white py-8 px-4 md:px-8">
+            <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
                 <NuxtLink to="/">
                     <div class="bg-white h-32 w-32 rounded-full" />
                 </NuxtLink>
                 <div class="flex flex-col gap-2">
                     <h2 class="text-2xl font-bold mb-4">Rechtliches</h2>
-                    <NuxtLink class="hover:underline" to="/impressum">Impressum</NuxtLink>
-                    <NuxtLink class="hover:underline" to="/datenschutz">Datenschutz</NuxtLink>
+                    <NuxtLink class="hover:underline text-center md:text-left" to="/impressum">Impressum</NuxtLink>
+                    <NuxtLink class="hover:underline text-center md:text-left" to="/datenschutz">Datenschutz</NuxtLink>
                 </div>
                 <div>
                     <h2 class="text-2xl font-bold mb-4">Folg mir auf Insta!</h2>
