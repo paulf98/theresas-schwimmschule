@@ -1,7 +1,7 @@
 <template>
     <main>
         <LandingHero />
-        <section>
+        <section class="py-8">
             <RegistrationForm />
         </section>
     </main>

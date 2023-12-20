@@ -1,5 +1,5 @@
 <template>
-    <div class="container mx-auto p-8 max-w-md">
+    <div class="container mx-auto p-8 max-w-md border rounded-lg shadow-md">
         <UForm :schema="schema" :state="state" class="space-y-4" @submit="submit">
             <div class="flex gap-8 justify-between">
                 <UFormGroup label="Erziehungsberechtigte/r" name="parentName" eager-validation>
@@ -26,7 +26,7 @@
             <UFormGroup label="E-Mail-Adresse" name="email" eager-validation>
                 <UInput v-model="state.email" placeholder="E-Mail-Adresse" />
             </UFormGroup>
-            <UButton type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Senden
+            <UButton type="submit" class="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-full">Senden
             </UButton>
         </UForm>
     </div>
