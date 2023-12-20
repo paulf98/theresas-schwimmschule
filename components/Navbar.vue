@@ -1,5 +1,8 @@
 <template>
-    <div class="w-full h-20 bg-green-200 flex justify-center items-center">
-        NAVBAR
+    <div class="bg-cyan-50 py-2">
+
+        <nav class="w-[80%] mx-auto h-16 bg-white flex justify-center items-center shadow-md rounded-full z-10">
+            NAVBAR
+        </nav>
     </div>
 </template>
