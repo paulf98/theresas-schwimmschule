@@ -2,8 +2,10 @@
     <section>
         <div class="flex bg-cyan-50">
             <div class="flex flex-col justify-center px-8">
-                <h1>Hero</h1>
-                <h5>subheading</h5>
+                <Heading>Theresa's Schwimmschule</Heading>
+                <Subheading>
+                    Wo Kinder zu Schwimmern werden
+                </Subheading>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione sapiente rem officia facere laudantium
                     molestias aperiam!</p>
             </div>
