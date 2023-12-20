@@ -16,8 +16,30 @@
                 </svg>
             </div>
         </div>
-        <footer class="w-full min-h-[200px] bg-sky-500 text-white flex justify-center items-center">
-            <p>FOOTER TEXT</p>
+        <footer class="w-full min-h-[200px] bg-sky-500 text-white py-8">
+            <div class="container mx-auto flex justify-between gap-8">
+
+                <NuxtLink to="/">
+                    <div class="bg-white h-32 w-32 rounded-full" />
+                </NuxtLink>
+                <div class="flex flex-col gap-2">
+                    <h2 class="text-2xl font-bold mb-4">Rechtliches</h2>
+                    <NuxtLink class="hover:underline" to="/impressum">Impressum</NuxtLink>
+                    <NuxtLink class="hover:underline" to="/datenschutz">Datenschutz</NuxtLink>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">Folg mir auf Insta!</h2>
+                    <p class="text-lg">Kontaktinformationen</p>
+                </div>
+            </div>
         </footer>
+        <div class="bg-sky-700 text-white flex justify-center p-2">
+            <p class="text-xs italic font-light">
+                © {{ new Date().getFullYear() }}, Theresa Hanke | <NuxtLink class="hover:underline" target="_blank"
+                    to="https://paulf.dev">
+                    Technische Umsetzung & Design: Paul Faass
+                </NuxtLink>
+            </p>
+        </div>
     </section>
 </template>
