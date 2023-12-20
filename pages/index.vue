@@ -1,5 +1,7 @@
 <template>
     <main>
-        MAIN CONTENT
+        <section>
+            <RegistrationForm />
+        </section>
     </main>
 </template>
