@@ -1,7 +1,7 @@
 <template>
     <section>
-        <div class="flex bg-cyan-50 justify-around py-8">
-            <div class="flex flex-col flex-1 justify-center px-8 max-w-sm">
+        <div class="flex flex-col md:flex-row bg-cyan-50 items-center justify-around py-8 px-4 md:px-8 gap-8">
+            <div class="flex flex-col flex-1 justify-center max-w-sm">
                 <Heading>Theresa's Schwimmschule</Heading>
                 <Subheading>
                     Wo Kinder zu Schwimmern werden
