@@ -1,7 +1,7 @@
 <template>
     <section>
-        <div class="flex bg-cyan-50">
-            <div class="flex flex-col flex-1 justify-center px-8">
+        <div class="flex bg-cyan-50 justify-around py-8">
+            <div class="flex flex-col flex-1 justify-center px-8 max-w-sm">
                 <Heading>Theresa's Schwimmschule</Heading>
                 <Subheading>
                     Wo Kinder zu Schwimmern werden
@@ -11,7 +11,7 @@
                 </Button>
             </div>
 
-            <NuxtImg class="rounded-bl-full max-w-sm" src="/hero-image.jpg" />
+            <NuxtImg class="rounded-bl-full rounded-tr-full rounded-tl-full max-w-sm" src="/hero-image.jpg" />
 
         </div>
 
