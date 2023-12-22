@@ -36,6 +36,7 @@
 import { z } from 'zod'
 
 const mail = useMail()
+const toast = useToast()
 
 function submit() {
     if (!mail) {
@@ -57,10 +58,19 @@ function submit() {
         E-Mail-Adresse: ${state.email}
         `,
     }).then(() => {
-        alert('Ihre Anmeldung wurde erfolgreich versendet.')
+        toast.add({
+            title: 'Anmeldung versendet',
+            description: 'Ihre Anmeldung wurde erfolgreich versendet.',
+            color: 'green',
+            timeout: 4000,
+        })
+
     }).catch(() => {
         alert('Ihre Anmeldung konnte nicht versendet werden.')
     })
+
+    // Reset form
+    Object.assign(state, defaultState)
 }
 
 const CourseGoal = z.enum(["Wasservertrautheit", "Schwimmen lernen", "Technik verbessern", "Wettkampftraining"])
@@ -84,15 +94,15 @@ const schema = z.object({
     email: z.string().email({ message: 'Bitte geben Sie eine gültige E-Mail-Adresse an.' }),
 })
 
-// const state = reactive({
-//     parentName: undefined,
-//     childName: undefined,
-//     childAge: undefined,
-//     childExperience: undefined,
-//     courseGoal: undefined,
-//     phone: undefined,
-//     email: undefined,
-// })
+const defaultState = reactive({
+    parentName: undefined,
+    childName: undefined,
+    childAge: undefined,
+    childExperience: undefined,
+    courseGoal: undefined,
+    phone: undefined,
+    email: undefined,
+})
 
 const state = reactive({
     parentName: "John Doe",

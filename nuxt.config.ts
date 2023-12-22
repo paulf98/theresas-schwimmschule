@@ -23,5 +23,12 @@ export default defineNuxtConfig({
 	colorMode: {
 		preference: 'light',
 	},
+	ui: {
+		// @ts-expect-error Somehow the typing for this is wrong
+		notifications: {
+			// Show toasts at the top right of the screen
+			position: 'top-0 bottom-auto',
+		},
+	},
 	css: ['~/assets/css/main.css'],
 });
