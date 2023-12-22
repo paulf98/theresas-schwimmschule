@@ -35,10 +35,32 @@
 <script setup lang="ts">
 import { z } from 'zod'
 
+const mail = useMail()
+
 function submit() {
-    // send the form data to 
-    console.log('submit')
-    console.log(state)
+    if (!mail) {
+        alert('Ihre Anmeldung konnte nicht versendet werden.')
+        return
+    }
+    mail.send({
+        from: state.parentName,
+        subject: `Anmeldung Schwimmkurs: ${state.childName}`,
+        text: `
+        Es wurde ein neuer Schwimmkurs angemeldet.
+
+        Name Erziehungsberechtigte/r: ${state.parentName}
+        Name Kind: ${state.childName}
+        Alter Kind: ${state.childAge}
+        Erfahrung Kind: ${state.childExperience}
+        Ziel des Kurses: ${state.courseGoal}
+        Telefonnummer: ${state.phone}
+        E-Mail-Adresse: ${state.email}
+        `,
+    }).then(() => {
+        alert('Ihre Anmeldung wurde erfolgreich versendet.')
+    }).catch(() => {
+        alert('Ihre Anmeldung konnte nicht versendet werden.')
+    })
 }
 
 const CourseGoal = z.enum(["Wasservertrautheit", "Schwimmen lernen", "Technik verbessern", "Wettkampftraining"])
@@ -73,11 +95,11 @@ const schema = z.object({
 // })
 
 const state = reactive({
-    parentName: "test",
-    childName: "test",
+    parentName: "John Doe",
+    childName: "Harry Potter",
     childAge: 4,
-    childExperience: "good",
-    courseGoal: undefined,
+    childExperience: "Okay",
+    courseGoal: courseGoalOptions[0].value,
     phone: "123456",
     email: "test@example.com",
 })
