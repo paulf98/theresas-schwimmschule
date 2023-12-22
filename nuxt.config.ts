@@ -3,6 +3,7 @@ export default defineNuxtConfig({
 	modules: [
 		'@nuxt/ui',
 		'@nuxt/image',
+		'@nuxtjs/turnstile',
 		[
 			'nuxt-mail',
 			{
@@ -31,4 +32,12 @@ export default defineNuxtConfig({
 		},
 	},
 	css: ['~/assets/css/main.css'],
+	turnstile: {
+		siteKey: process.env.TURNSTILE_SITE_KEY,
+	},
+	runtimeConfig: {
+		turnstile: {
+			secretKey: process.env.TURNSTILE_SECRET_KEY,
+		},
+	},
 });

@@ -1,6 +1,6 @@
 <template>
     <div class="container mx-auto p-8 max-w-md border rounded-lg shadow-md">
-        <UForm :schema="schema" :state="state" class="space-y-4" @submit="submit">
+        <UForm :schema="schema" :state="state" class="space-y-4" @submit.prevent="submit">
             <div class="flex gap-8 justify-between">
                 <UFormGroup label="Erziehungsberechtigte/r" name="parentName" eager-validation>
                     <UInput v-model="state.parentName" placeholder="Name Erziehungsberechtigte/r" />
@@ -26,8 +26,12 @@
             <UFormGroup label="E-Mail-Adresse" name="email" eager-validation>
                 <UInput v-model="state.email" placeholder="E-Mail-Adresse" />
             </UFormGroup>
-            <UButton type="submit" class="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-full">Senden
-            </UButton>
+            <div class="flex flex-col gap-4 items-start">
+                <UButton type="submit" :disabled="!token"
+                    class="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-full">Senden
+                </UButton>
+                <NuxtTurnstile v-model="token" theme="light" />
+            </div>
         </UForm>
     </div>
 </template>
@@ -38,8 +42,10 @@ import { z } from 'zod'
 const mail = useMail()
 const toast = useToast()
 
+const token = ref<string | undefined>(undefined)
+
 function submit() {
-    if (!mail) {
+    if (!mail || !token) {
         alert('Ihre Anmeldung konnte nicht versendet werden.')
         return
     }
